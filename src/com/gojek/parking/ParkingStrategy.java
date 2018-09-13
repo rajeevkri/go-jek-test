@@ -20,8 +20,6 @@ public class ParkingStrategy {
 
 	private Map<String, List<String>> colorCarMap;
 
-	private static ParkingStrategy parkingStrategy = null;
-
 	public ParkingStrategy(int inputSlots) {
 		this.totalSlots = inputSlots;
 		availableSlots = new ArrayList<Integer>();
