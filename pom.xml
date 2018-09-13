@@ -47,22 +47,42 @@
 			</plugin>
 
 			<!-- Make this jar executable -->
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<!-- DO NOT include log4j.properties file in your Jar -->
-					<excludes>
-						<exclude>**/log4j.properties</exclude>
-					</excludes>
 					<archive>
 						<manifest>
-							<!-- Jar file entry point -->
+							Jar file entry point
+            					<addClasspath>true</addClasspath>
 							<mainClass>com.gojek.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
-			</plugin>
+			</plugin> -->
+			
+			<plugin>
+				    <artifactId>maven-assembly-plugin</artifactId>
+				    <executions>
+				      <execution>
+				        <phase>package</phase>
+				        <goals>
+				          <goal>single</goal>
+				        </goals>
+				      </execution>
+				    </executions>
+				    <configuration>
+				      <archive>
+				        <manifest>
+				          <addClasspath>true</addClasspath>
+				          <mainClass>com.gojek.Main</mainClass>
+				        </manifest>
+				      </archive>
+				      <descriptorRefs>
+				        <descriptorRef>jar-with-dependencies</descriptorRef>
+				      </descriptorRefs>
+				    </configuration>
+				  </plugin>
 
 		</plugins>
 	</build>
