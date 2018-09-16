@@ -1,2 +1,2 @@
-mvn clean package 
+mvn clean install 
 java -jar target/parkingLot.jar $1

@@ -6,7 +6,7 @@ import com.gojek.input.parser.FileInputParser;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
 		AbstractParser processor = null;
 
@@ -15,7 +15,11 @@ public class Main {
 		} else {
 			processor = new CommandLineParser();
 		}
-		processor.process();
+		try {
+			processor.process();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
