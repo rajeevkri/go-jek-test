@@ -4,9 +4,9 @@ import com.gojek.input.Instructions;
 import com.gojek.parking.ParkingStrategy;
 
 public abstract class AbstractParser {
+	ParkingStrategy parkingLot = null;
 
 	public void validateAndProcess(String inputString) throws Exception {
-		ParkingStrategy parkingLot = null;
 		String[] inputStrArr = inputString.split(" ");
 		if (inputStrArr[0].equals("")) {
 			System.out.println("Thanks for using the program");
